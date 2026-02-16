@@ -1,4 +1,4 @@
-package com.android.nesinecasestudy.ui.listscreen.compose.postview
+package com.android.nesinecasestudy.ui.listscreen.compose.postitemview
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -43,7 +43,9 @@ fun PostComposeView(
     val dismissState = rememberSwipeToDismissBoxState()
 
     LaunchedEffect(dismissState.currentValue) {
-        if (dismissState.currentValue == SwipeToDismissBoxValue.EndToStart || dismissState.currentValue == SwipeToDismissBoxValue.StartToEnd) {
+        if (dismissState.currentValue == SwipeToDismissBoxValue.EndToStart
+            || dismissState.currentValue == SwipeToDismissBoxValue.StartToEnd
+        ) {
             deletePost(post.id)
             dismissState.snapTo(SwipeToDismissBoxValue.Settled)
         }
@@ -117,7 +119,5 @@ fun DeleteBackground() {
             .background(Color.Transparent)
             .padding(horizontal = 20.dp),
         contentAlignment = Alignment.CenterEnd
-    ) {
-
-    }
+    ) {}
 }

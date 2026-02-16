@@ -21,14 +21,14 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.android.nesinecasestudy.ui.listscreen.ListScreenEvent
 import com.android.nesinecasestudy.ui.listscreen.ListScreenIntent
-import com.android.nesinecasestudy.ui.listscreen.compose.postview.PostComposeView
+import com.android.nesinecasestudy.ui.listscreen.compose.postitemview.PostComposeView
 import com.android.nesinecasestudy.ui.listscreen.vm.ListViewModel
 import com.android.nesinecasestudy.ui.theme.lightGray
 
 @Composable
 fun ComposeListScreen(
     viewModel: ListViewModel = hiltViewModel(),
-    onNavigateToPostDetail: (Int, String, String) -> Unit,
+    onNavigateToPostDetail: (String, String) -> Unit,
     onNavigateBack: () -> Unit,
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -44,7 +44,7 @@ fun ComposeListScreen(
                 }
 
                 is ListScreenEvent.NavigateToPostDetail -> {
-                    onNavigateToPostDetail(event.id, event.title, event.detail)
+                    onNavigateToPostDetail(event.title, event.detail)
                 }
             }
         }
@@ -98,7 +98,7 @@ fun ComposeListScreen(
                             },
                             onClick = { id, title, body ->
                                 viewModel.onIntent(
-                                    ListScreenIntent.PostClicked(id, title, body)
+                                    ListScreenIntent.PostClicked(title, body)
                                 )
                             }
                         )

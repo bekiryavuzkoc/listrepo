@@ -3,11 +3,9 @@ package com.android.nesinecasestudy.ui.listscreen.vm
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.android.nesinecasestudy.domain.usecase.GetPostUseCase
+import com.android.nesinecasestudy.domain.utils.Result
 import com.android.nesinecasestudy.ui.listscreen.ListScreenEvent
 import com.android.nesinecasestudy.ui.listscreen.ListScreenIntent
-import com.android.nesinecasestudy.domain.utils.Result
-import com.android.nesinecasestudy.domain.utils.onError
-import com.android.nesinecasestudy.domain.utils.onSuccess
 import com.android.nesinecasestudy.ui.listscreen.ListUiState
 import com.android.nesinecasestudy.ui.listscreen.mapper.toUIModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -41,7 +39,7 @@ class ListViewModel @Inject constructor(
             ListScreenIntent.PullRefresh -> pullRefreshPostList()
             ListScreenIntent.NavigateBack -> emitEvent(ListScreenEvent.NavigateBack)
             is ListScreenIntent.PostClicked -> {
-                emitEvent(ListScreenEvent.NavigateToPostDetail(intent.id, intent.title, intent.detail))
+                emitEvent(ListScreenEvent.NavigateToPostDetail(intent.title, intent.detail))
             }
 
             is ListScreenIntent.PostDeleted -> {

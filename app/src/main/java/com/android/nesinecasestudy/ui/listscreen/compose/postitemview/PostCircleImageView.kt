@@ -1,4 +1,4 @@
-package com.android.nesinecasestudy.ui.listscreen.compose.postview
+package com.android.nesinecasestudy.ui.listscreen.compose.postitemview
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape

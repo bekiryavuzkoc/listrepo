@@ -22,5 +22,5 @@ sealed class NavigationRoute : Parcelable {
 
     @Serializable
     @Parcelize
-    data class ComposePostDetailScreen(val id: Int, val title: String, val detail: String) : NavigationRoute()
+    data class ComposePostDetailScreen(val title: String, val detail: String) : NavigationRoute()
 }

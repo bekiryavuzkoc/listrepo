@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.toRoute
 import com.android.nesinecasestudy.ui.homescreen.HomeScreen
 import com.android.nesinecasestudy.ui.listscreen.compose.listview.ComposeListScreen
+import com.android.nesinecasestudy.ui.postdetailscreen.compose.PostDetailScreen
 
 @Composable
 fun NavigationHost(
@@ -30,10 +31,9 @@ fun NavigationHost(
 
         composable<NavigationRoute.ComposeDesignScreen> {
             ComposeListScreen(
-                onNavigateToPostDetail = { id, title, detail ->
+                onNavigateToPostDetail = { title, detail ->
                     navController.navigate(
                         NavigationRoute.ComposePostDetailScreen(
-                            id = id,
                             title = title,
                             detail = detail
                         )
@@ -50,24 +50,16 @@ fun NavigationHost(
         }
 
         composable<NavigationRoute.ComposePostDetailScreen> { backStackEntry ->
-            val id: Int = backStackEntry.toRoute<NavigationRoute.ComposePostDetailScreen>().id
             val title: String = backStackEntry.toRoute<NavigationRoute.ComposePostDetailScreen>().title
             val body: String = backStackEntry.toRoute<NavigationRoute.ComposePostDetailScreen>().detail
 
-//            PostDetailScreen(
-//                movieId = id,
-//                onBackClick = {
-//                    navController.navigateUp()
-//                },
-//                onDiscoverPopularClick = {
-//                    navController.navigate(NavigationRoute.PopularMovies) {
-//                        popUpTo<NavigationRoute.Home> {
-//                            inclusive = false
-//                        }
-//                    }
-//                },
-//            )
-
+            PostDetailScreen(
+                title = title,
+                body = body,
+                onNavigateBack = {
+                    navController.navigateUp()
+                },
+            )
         }
     }
 }

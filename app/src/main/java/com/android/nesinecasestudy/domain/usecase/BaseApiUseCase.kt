@@ -1,7 +1,7 @@
 package com.android.nesinecasestudy.domain.usecase
 
-import com.android.nesinecasestudy.domain.utils.Result
 import com.android.nesinecasestudy.domain.utils.NetworkError
+import com.android.nesinecasestudy.domain.utils.Result
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
