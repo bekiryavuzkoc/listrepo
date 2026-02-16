@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">nesinecasestudy</string>
+    <string name="xml_design">XML Design</string>
+    <string name="compose_design">Compose Design</string>
+    <string name="delete">Delete</string>
 </resources>
