@@ -1,6 +1,7 @@
 package com.android.nesinecasestudy.di
 
 import com.android.nesinecasestudy.BuildConfig
+import com.android.nesinecasestudy.di.InterceptorModule.provideCustomTimeoutInterceptor
 import com.android.nesinecasestudy.di.InterceptorModule.provideDefaultHeaderInterceptor
 import com.android.nesinecasestudy.di.InterceptorModule.provideLoggingInterceptor
 import com.google.gson.Gson
@@ -24,6 +25,7 @@ object NetworkModule {
         return OkHttpClient.Builder()
             .addInterceptor(provideDefaultHeaderInterceptor())
             .addInterceptor(provideLoggingInterceptor())
+            .addInterceptor(provideCustomTimeoutInterceptor())
             .build()
     }
 

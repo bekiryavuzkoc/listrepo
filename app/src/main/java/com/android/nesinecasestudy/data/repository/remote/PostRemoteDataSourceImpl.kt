@@ -1,7 +1,6 @@
 package com.android.nesinecasestudy.data.repository.remote
 
 import com.android.nesinecasestudy.data.model.PostResponseItem
-import com.android.nesinecasestudy.domain.repository.PostRemoteDataSource
 import com.android.nesinecasestudy.domain.utils.NetworkError
 import com.android.nesinecasestudy.domain.utils.Result
 import com.android.nesinecasestudy.domain.utils.handleApi

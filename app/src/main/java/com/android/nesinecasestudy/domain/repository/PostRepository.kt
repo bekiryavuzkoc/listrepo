@@ -6,5 +6,5 @@ import com.android.nesinecasestudy.domain.utils.Result
 
 interface PostRepository {
 
-    suspend fun getPost(): Result<List<Post>, NetworkError>
+    suspend fun getPosts(): Result<List<Post>, NetworkError>
 }

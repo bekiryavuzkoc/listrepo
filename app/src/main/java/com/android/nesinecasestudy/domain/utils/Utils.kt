@@ -1,9 +1,6 @@
 package com.android.nesinecasestudy.domain.utils
 
 import android.util.Log
-import okhttp3.Interceptor
-import okhttp3.Request
-import okhttp3.Response
 import org.json.JSONObject
 import java.nio.channels.UnresolvedAddressException
 
@@ -14,15 +11,6 @@ internal const val DEFAULT_READ_TIME_OUT = 15000L
 
 const val CUSTOM_HEADER_CONNECT_TIMEOUT = "CONNECT_TIMEOUT"
 const val CUSTOM_HEADER_READ_TIMEOUT = "READ_TIMEOUT"
-
-internal fun Interceptor.Chain.setAdditionalSpecsAndProceed(
-    requestBuilder: Request.Builder? = null
-): Response {
-    val rb = requestBuilder ?: request()
-        .newBuilder()
-
-    return proceed(rb.build())
-}
 
 suspend fun <T> handleApi(
     execute: suspend () -> retrofit2.Response<T>

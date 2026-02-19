@@ -8,13 +8,13 @@ import com.android.nesinecasestudy.domain.utils.Result
 import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Inject
 
-class GetPostUseCase @Inject constructor(
+class GetPostsUseCase @Inject constructor(
     private val repository: PostRepository,
     @IODispatcher ioDispatcher: CoroutineDispatcher,
 ) : BaseApiUseCase<List<Post>, Unit>(ioDispatcher) {
 
     override suspend fun executeOnBackground(param: Unit): Result<List<Post>, NetworkError> {
-        return repository.getPost()
+        return repository.getPosts()
     }
 
     suspend fun get(param: Unit = Unit) = execute(param)

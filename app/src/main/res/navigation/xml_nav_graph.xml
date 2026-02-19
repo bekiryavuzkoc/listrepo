@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/xml_nav_graph"
+    app:startDestination="@id/xmlListFragment">
+
+    <fragment
+        android:id="@+id/xmlListFragment"
+        android:name="com.android.nesinecasestudy.ui.listscreen.xml.PostListFragment"
+        android:label="List">
+
+        <action
+            android:id="@+id/action_list_to_detail"
+            app:destination="@id/xmlDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/xmlDetailFragment"
+        android:name="com.android.nesinecasestudy.ui.postdetailscreen.xml.PostDetailFragment"
+        android:label="Detail">
+
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue="" />
+
+        <argument
+            android:name="body"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
+
+
+</navigation>

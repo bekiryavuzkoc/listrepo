@@ -2,7 +2,7 @@ package com.android.nesinecasestudy.ui.listscreen.vm
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.android.nesinecasestudy.domain.usecase.GetPostUseCase
+import com.android.nesinecasestudy.domain.usecase.GetPostsUseCase
 import com.android.nesinecasestudy.domain.utils.Result
 import com.android.nesinecasestudy.ui.listscreen.ListScreenEvent
 import com.android.nesinecasestudy.ui.listscreen.ListScreenIntent
@@ -21,7 +21,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ListViewModel @Inject constructor(
-    private val getPostUseCase: GetPostUseCase,
+    private val getPostUseCase: GetPostsUseCase,
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(ListUiState())

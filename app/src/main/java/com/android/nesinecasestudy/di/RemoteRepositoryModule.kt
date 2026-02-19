@@ -1,7 +1,7 @@
 package com.android.nesinecasestudy.di
 
+import com.android.nesinecasestudy.data.repository.remote.PostRemoteDataSource
 import com.android.nesinecasestudy.data.repository.remote.PostRemoteDataSourceImpl
-import com.android.nesinecasestudy.domain.repository.PostRemoteDataSource
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

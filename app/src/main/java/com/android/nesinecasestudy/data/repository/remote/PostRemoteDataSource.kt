@@ -1,4 +1,4 @@
-package com.android.nesinecasestudy.domain.repository
+package com.android.nesinecasestudy.data.repository.remote
 
 import com.android.nesinecasestudy.data.model.PostResponseItem
 import com.android.nesinecasestudy.domain.utils.NetworkError

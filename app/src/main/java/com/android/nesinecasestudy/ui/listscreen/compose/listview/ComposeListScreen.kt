@@ -96,7 +96,7 @@ fun ComposeListScreen(
                                     ListScreenIntent.PostDeleted(id)
                                 )
                             },
-                            onClick = { id, title, body ->
+                            onClick = { title, body ->
                                 viewModel.onIntent(
                                     ListScreenIntent.PostClicked(title, body)
                                 )
